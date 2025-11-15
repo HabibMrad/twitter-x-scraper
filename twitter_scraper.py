@@ -56,19 +56,19 @@ def main(
 
         # Validate inputs
         if not from_date and not to_date and not days:
-            click.echo("⚠️  No date range specified. Using last 7 days as default.")
+            click.echo("[!] No date range specified. Using last 7 days as default.")
             days = 7
 
         if (from_date or to_date) and days:
-            click.echo("❌ Error: Cannot use both --from/--to and --days options together.")
+            click.echo("[X] Error: Cannot use both --from/--to and --days options together.")
             sys.exit(1)
 
         # Initialize scraper
-        click.echo(f"🔍 Initializing scraper for @{username.lstrip('@')}...")
+        click.echo(f"[*] Initializing scraper for @{username.lstrip('@')}...")
         scraper = TwitterScraper()
 
         # Scrape tweets
-        click.echo("📥 Fetching tweets... This may take a few minutes.")
+        click.echo("[*] Fetching tweets... This may take a few minutes.")
         click.echo()
 
         tweets = scraper.scrape_user_tweets(
@@ -82,15 +82,15 @@ def main(
         )
 
         if not tweets:
-            click.echo("❌ No tweets found for the specified criteria.")
+            click.echo("[X] No tweets found for the specified criteria.")
             sys.exit(0)
 
         click.echo()
-        click.echo(f"✅ Successfully scraped {len(tweets)} tweets!")
+        click.echo(f"[+] Successfully scraped {len(tweets)} tweets!")
         click.echo()
 
         # Generate HTML report
-        click.echo("📄 Generating HTML report...")
+        click.echo("[*] Generating HTML report...")
 
         # Determine output path
         if not output.endswith('.html'):
@@ -120,24 +120,24 @@ def main(
 
         click.echo()
         click.echo("=" * 60)
-        click.echo("✨ Success!")
+        click.echo("[+] Success!")
         click.echo("=" * 60)
         click.echo()
-        click.echo(f"📊 Tweets scraped: {len(tweets)}")
-        click.echo(f"📁 HTML report: {output_path}")
-        click.echo(f"💾 Raw data saved in: {Config.DATA_DIR}")
+        click.echo(f"[*] Tweets scraped: {len(tweets)}")
+        click.echo(f"[*] HTML report: {output_path}")
+        click.echo(f"[*] Raw data saved in: {Config.DATA_DIR}")
         click.echo()
-        click.echo("🌐 Open the HTML file in your browser to view the analysis!")
+        click.echo("[*] Open the HTML file in your browser to view the analysis!")
         click.echo()
 
     except KeyboardInterrupt:
-        click.echo("\n\n⚠️  Scraping interrupted by user.")
+        click.echo("\n\n[!] Scraping interrupted by user.")
         sys.exit(1)
 
     except Exception as e:
         logger.exception("Fatal error occurred")
-        click.echo(f"\n❌ Error: {str(e)}")
-        click.echo("\n💡 Troubleshooting tips:")
+        click.echo(f"\n[X] Error: {str(e)}")
+        click.echo("\n[*] Troubleshooting tips:")
         click.echo("   1. Check if the username is correct")
         click.echo("   2. Verify your internet connection")
         click.echo("   3. Check the log file: scraper.log")

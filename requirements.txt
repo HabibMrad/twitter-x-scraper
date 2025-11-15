@@ -1,4 +1,12 @@
+# Primary scraper (install from GitHub for latest version)
+# Install with: pip install "git+https://github.com/JustAnotherArchivist/snscrape.git@master"
+snscrape @ git+https://github.com/JustAnotherArchivist/snscrape.git@master
+
+# Fallback scrapers
 ntscraper>=0.4.0
+tweepy>=4.14.0
+
+# Core dependencies
 playwright>=1.40.0
 python-dotenv>=1.0.0
 beautifulsoup4>=4.12.0
