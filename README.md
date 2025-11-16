@@ -2,16 +2,31 @@
 
 A powerful Python CLI tool to scrape Twitter/X account tweets and generate beautiful, self-contained HTML analysis pages.
 
+## 🚀 NEW: HTML Parsing Method (FREE & WORKS TODAY!)
+
+**Twitter blocked all free API methods!** But we have a solution:
+
+✅ **Copy Twitter HTML → Parse → Beautiful Report** (See [HTML_PARSING_GUIDE.md](HTML_PARSING_GUIDE.md))
+✅ **100% Free** - No $200/month API costs
+✅ **Works for any public account**
+✅ **Real tweets with metrics, images, videos**
+✅ **Takes 3 minutes** - Copy, paste, parse!
+
+```bash
+# Quick start:
+python parse_twitter_html.py twitter_page.html --output report.html
+```
+
 ## Features
 
-- **Flexible Scraping**: Fetch tweets by date range or last N days
+- **Multiple Scraping Methods**: API, HTML parsing, and demo mode
 - **Comprehensive Data**: Captures tweets, retweets, quotes, replies, media, and engagement metrics
 - **Beautiful HTML Output**: Professional, responsive design with dark mode
 - **Interactive Features**: Search, filter, sort, and analyze tweets in the browser
-- **No API Required**: Uses fallback scraping methods (ntscraper)
+- **HTML Parsing**: FREE method that works when APIs don't (recommended!)
+- **Demo Mode**: Test with mock data instantly
 - **Data Archival**: Saves raw data to JSON for backup
-- **Progress Tracking**: Real-time progress indicators during scraping
-- **Error Handling**: Robust handling of rate limits, deleted tweets, and private accounts
+- **Error Handling**: Robust handling of different scraping scenarios
 
 ## Installation
 
